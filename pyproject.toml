@@ -1,0 +1,43 @@
+[build-system]
+requires = ["maturin>=1.9,<2.0"]
+build-backend = "maturin"
+
+[project]
+name = "kinemax"
+version = "0.0.1"
+description = "High-performance coordinate and kinematics engine for bounded spatial tracking data."
+readme = "README.md"
+requires-python = ">=3.9"
+license = {text = "MIT"}
+authors = [{ name = "Anthony Sgro" }]
+keywords = ["spatial", "kinematics", "tracking", "geometry", "telemetry"]
+classifiers = [
+    "Development Status :: 2 - Pre-Alpha",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Programming Language :: Rust",
+    "Topic :: Scientific/Engineering",
+    "Topic :: Scientific/Engineering :: Mathematics",
+    "Topic :: Scientific/Engineering :: Physics",
+]
+
+[project.urls]
+Homepage = "https://github.com/anthonysgro/kinemax"
+Repository = "https://github.com/anthonysgro/kinemax"
+Issues = "https://github.com/anthonysgro/kinemax/issues"
+
+[tool.maturin]
+python-source = "python"
+features = ["pyo3/extension-module"]
+
+[dependency-groups]
+dev = ["maturin>=1.9,<2.0"]
