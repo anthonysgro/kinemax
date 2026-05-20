@@ -13,15 +13,17 @@ Whether tracking player telemetry on a sports field, monitoring mobile entities 
 Requires [uv](https://docs.astral.sh/uv/) and a working Rust toolchain.
 
 ```bash
-# Create the virtual environment (Python pin lives in .python-version)
-uv venv
-
-# Install build tooling and compile the Rust extension in-place
-uv pip install "maturin>=1.9,<2.0"
-.venv/bin/maturin develop
+# One-shot setup: creates .venv, installs maturin, builds and installs kinemax
+uv sync
 
 # Verify the install
-.venv/bin/python -c "import kinemax; print(kinemax.version())"
+uv run python -c "import kinemax; print(kinemax.version())"
+```
+
+After editing `src/lib.rs`, rebuild with:
+
+```bash
+uv run maturin develop
 ```
 
 ## License
